@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+            <title>UMSA Jeopardy Game</title>
+            <link rel="stylesheet" href="../static/css/styles.css">
+            <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            {% include 'navbar.html' %}
+            <div class = "container">
+                <table>
+                    <tr>
+                        <th>Category 1</th>
+                        <th>Category 2</th>
+                        <th>Category 3</th>
+                        <th>Category 4</th>
+                        <th>Category 5</th>
+                    </tr>
+                    <tr>
+                        <td class="c1question" data-value="100">100</td>
+                        <td class="c2question" data-value="100">100</td>
+                        <td class="c3question" data-value="100">100</td>
+                        <td class="c4question" data-value="100">100</td>
+                        <td class="c5question" data-value="100">100</td>
+                    </tr>
+                    <tr>
+                        <td class="c1question" data-value="200">200</td>
+                        <td class="c2question" data-value="200">200</td>
+                        <td class="c3question" data-value="200">200</td>
+                        <td class="c4question" data-value="200">200</td>
+                        <td class="c5question" data-value="200">200</td>
+                    </tr>
+                    <tr>
+                        <td class="c1question" data-value="300">300</td>
+                        <td class="c2question" data-value="300">300</td>
+                        <td class="c3question" data-value="300">300</td>
+                        <td class="c4question" data-value="300">300</td>
+                        <td class="c5question" data-value="300">300</td>
+                    </tr>
+                    <tr>
+                        <td class="c1question" data-value="400">400</td>
+                        <td class="c2question" data-value="400">400</td>
+                        <td class="c3question" data-value="400">400</td>
+                        <td class="c4question" data-value="400">400</td>
+                        <td class="c5question" data-value="400">400</td>
+                    </tr>
+                    <tr>
+                        <td class="c1question" data-value="500">500</td>
+                        <td class="c2question" data-value="500">500</td>
+                        <td class="c3question" data-value="500">500</td>
+                        <td class="c4question" data-value="500">500</td>
+                        <td class="c5question" data-value="500">500</td>
+                    </tr>
+                </table>
+            </div>
+        </body>
+
+    </html>
+
+<!-- Add your JavaScript code here -->
+<script type='text/javascript'>
+    var questions = document.querySelectorAll('[class$="question"]');
+    for (var i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', function() {
+            var value = this.getAttribute('data-value');
+            window.location.href = 'question.html?value=' + value;
+        });
+    }
+</script>
