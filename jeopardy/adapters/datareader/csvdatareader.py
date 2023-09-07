@@ -18,10 +18,10 @@ class GameFileCSVReader:
             reader = csv.DictReader(file)
             for row in reader:
                 try:
-                    theme = row["Theme"]
+                    category = row["Category"]
                     question = row["Question"]
                     value = row["Value"]
-                    q = Question(theme,question,value)
+                    q = Question(category,question,value)
                     q.image = row["Image"]
                     answer = row["Answer"]
                     

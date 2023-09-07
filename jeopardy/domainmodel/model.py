@@ -22,8 +22,8 @@ class Scoreboard:
         self.score += value
 
 class Question:
-    def __init__(self, theme, question, value):
-        self.theme = theme
+    def __init__(self, category, question, value):
+        self.category = category
         self.question = question
         self.value = value
         self.image = None
@@ -40,8 +40,8 @@ class Question:
     def __hash__(self):
         return hash((self.question, self.image))
     
-    def get_theme(self):
-        return self.theme
+    def get_category(self):
+        return self.category
         
     def get_question(self):
         return self.question

@@ -12,7 +12,7 @@ class AbstractRepository(abc.ABC):
     """Interface for a repository providing access to game data."""
 
     @abc.abstractmethod
-    def add_question(self, game: Question):
+    def add_question(self, question: Question):
         """Adds a question to the repository."""
         raise NotImplementedError
     

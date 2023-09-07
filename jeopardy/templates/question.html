@@ -3,7 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UMSA Jeopardy Game</title>
-        <link rel="stylesheet" href="../adapters/static/css/styles.css">
+        <title>UMSA Jeopardy Game - Question</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     </head>
+    <body>
+        <div class="main-content">
+            <h1>Question</h1>
+            <p id="question-text"></p>
+            <button id="back-button">Back to game</button>
+        </div>
+    </body>
+</html>
+
+<!-- Add your JavaScript code here -->
+<script type='text/javascript'>
+    // Get the value and category from the URL query parameters
+    var urlParams = new URLSearchParams(window.location.search);
+    var value = urlParams.get('value');
+    var category = urlParams.get('category');
+
+    // Display the question text
+    var questionText = document.getElementById('question-text');
+    questionText.textContent = 'Question for category ' + category + ' with value ' + value;
+
+    // Add an event listener to the back button
+    var backButton = document.getElementById('back-button');
+    backButton.addEventListener('click', function() {
+        window.location.href = '/';
+    });
+</script>
