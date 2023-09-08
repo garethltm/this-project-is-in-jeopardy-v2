@@ -13,7 +13,6 @@ def getQuestion(category, value, repo: AbstractRepository):
 
 def getAnswer(category, value, repo: AbstractRepository):
     answers = repo.getAllAnswers()
-    print(answers)
     for a in answers:
         if a.category == category and a.value == value:
             return a

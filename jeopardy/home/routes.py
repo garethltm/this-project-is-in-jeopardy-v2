@@ -23,7 +23,6 @@ def question():
     
     # Retrieve the question data from the repository
     question = services.getQuestion(category, value, repo.repo_instance)
-    # answers = utilities.getAllAnswers(repo.repo_instance)
 
     return render_template('question.html',
                            question=question.question,
