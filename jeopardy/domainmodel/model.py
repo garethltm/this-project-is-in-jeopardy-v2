@@ -50,8 +50,10 @@ class Question:
         return self.image
 
 class Answer:
-    def __init__(self, answer):
+    def __init__(self, category, answer, value):
+        self.category = category
         self.answer = answer
+        self.value = value
         self.correct = False
     
     def __repr__(self):
@@ -62,6 +64,9 @@ class Answer:
     
     def __hash__(self):
         return hash((self.answer, self.correct))
+    
+    def getCategory(self):
+        return self.category
     
     def get_answer(self):
         return self.answer

@@ -11,22 +11,33 @@ home = Blueprint('home', __name__, static_folder='static', template_folder='temp
 @home.route('/', methods=['GET'])
 def home_home():
     scoreboard = services.getScoreboard(repo.repo_instance)
-    questions = utilities.getAllQuestions(repo.repo_instance)
-    answers = utilities.getAllAnswers(repo.repo_instance)
 
     return render_template('layout.html',
                            scoreboard = scoreboard,
-                           questions = questions,
-                           answers = answers
                            )
 
 @home.route('/question', methods=['GET'])
 def question():
-    value = request.args.get('value')
     category = request.args.get('category')
-
+    value = request.args.get('value')
+    
     # Retrieve the question data from the repository
-    question = utilities.getQuestion(category, value, repo.repo_instance)
+    question = services.getQuestion(category, value, repo.repo_instance)
+    # answers = utilities.getAllAnswers(repo.repo_instance)
 
     return render_template('question.html',
-                           question=question)
+                           question=question.question,
+                           image=question.image,
+                           value=question.value)
+    
+@home.route('/answer', methods=['GET'])
+def answer():
+    category = request.args.get('category')
+    value = request.args.get('value')
+        
+    # Retrieve the answer data from the repository
+    answer = services.getAnswer(category, value, repo.repo_instance)
+
+    return render_template('answer.html',
+                           answer=answer.answer
+                           )

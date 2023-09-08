@@ -3,20 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UMSA Jeopardy Game - Question</title>
+        <title>UMSA Jeopardy Game - Answer</title>
         <link rel="stylesheet" href="../static/css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Question:</h1>
+        <h1>Answer:</h1>
         <div class="main-content">
-            <div class = "question-text" id="question-text">
-                <p>{{question}}</p>
+            <div class = "answer-text" id="answer-text">
+                <p>{{answer}}</p>
                 <p><img src="{{image}}">
                 </p>
             </div>
-            <button id="answer">Reveal Answer</button>
+            <button id="back-button">Back to menu</button>
         </div>
     </body>
 </html>
@@ -28,12 +28,12 @@
     var value = urlParams.get('value');
     var category = urlParams.get('category');
 
-    // Display the question text
-    var questionText = document.getElementById('question-text');
-    
-    // Add an event listener to the answer button
-    var answerButton = document.getElementById('answer');
-    answerButton.addEventListener('click', function() {
-        window.location.href = '/answer?value=' + value + '&category=' + category;
+    // Display the answer text
+    var answerText = document.getElementById('answer-text');    
+
+    // Add an event listener to the back button
+    var backButton = document.getElementById('back-button');
+    backButton.addEventListener('click', function() {
+        window.location.href = '/';
     });
 </script>

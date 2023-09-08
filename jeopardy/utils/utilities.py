@@ -7,10 +7,3 @@ def getAllQuestions(repo: AbstractRepository):
 def getAllAnswers(repo: AbstractRepository):
     return repo.getAllAnswers()
 
-def getQuestion(category, value, repo):
-    questions = repo.getAllQuestions()
-    for question in questions:
-        if question.category == category and question.value == value:
-            return question
-    return None
-

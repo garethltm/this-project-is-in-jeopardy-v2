@@ -1,7 +1,26 @@
 Category,Question,Image,Answer,Value
-c1,What is the name of this animal?,https://i.imgur.com/4Z1Er8C.jpg,cat,cat,500
-c2,Why is this animal so cute?,https://i.imgur.com/4Z1Er8C.jpg,cat,idk,500
-c3,What is the name of this animal?,https://i.imgur.com/4Z1Er8C.jpg,cat,cat,500
-c4,Why is this animal so cute?,https://i.imgur.com/4Z1Er8C.jpg,cat,idk,500
-c5,What is the name of this animal?,https://i.imgur.com/4Z1Er8C.jpg,cat,cat,500
-c6,Why is this animal so cute?,https://i.imgur.com/4Z1Er8C.jpg,cat,idk,500
+c1,What is the name of this Animal,../static/images/among-us.gif,amogus sussy sus,100
+c1,A Category 1 Question with value of 200,https://i.imgur.com/4Z1Er8C.jpg,200answerc1,200
+c1,A Category 1 Question with value of 300,https://i.imgur.com/4Z1Er8C.jpg,300answerc1,300
+c1,A Category 1 Question with value of 400,https://i.imgur.com/4Z1Er8C.jpg,400answerc1,400
+c1,A Category 1 Question with value of 500,https://i.imgur.com/4Z1Er8C.jpg,500answerc1,500
+c2,A Category 2 Question with value of 100,https://i.imgur.com/4Z1Er8C.jpg,100answerc2,100
+c2,A Category 2 Question with value of 200,,200answerc2,200
+c2,A Category 2 Question with value of 300,,300answerc2,300
+c2,A Category 2 Question with value of 400,,400answerc2,400
+c2,A Category 2 Question with value of 500,,500answerc2,500
+c3,A Category 3 Question with value of 100,,100answerc3,100
+c3,A Category 3 Question with value of 200,,200answerc3,200
+c3,A Category 3 Question with value of 300,,300answerc3,300
+c3,A Category 3 Question with value of 400,,400answerc3,400
+c3,A Category 3 Question with value of 500,,500answerc3,500
+c4,A Category 4 Question with value of 100,,100answerc4,100
+c4,A Category 4 Question with value of 200,,200answerc4,200
+c4,A Category 4 Question with value of 300,,300answerc4,300
+c4,A Category 4 Question with value of 400,,400answerc4,400
+c4,A Category 4 Question with value of 500,,500answerc4,500
+c5,A Category 5 Question with value of 100,,100answerc5,100
+c5,A Category 5 Question with value of 200,,200answerc5,200
+c5,A Category 5 Question with value of 300,,300answerc5,300
+c5,A Category 5 Question with value of 400,,400answerc5,400
+c5,A Category 5 Question with value of 500,,500answerc5,500

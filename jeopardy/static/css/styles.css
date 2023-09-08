@@ -16,6 +16,7 @@ h1 {
     font-size: 72px;
     margin-top: auto;
     color: rgb(255, 0, 0);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; /* increased offsets from 1px to 2px */
 }
 
 table {
@@ -63,4 +64,33 @@ table tr:nth-child(even) td {
 table td.clicked {
     background-color: black !important;
     color: white !important;
+}
+
+#answer, #back-button {
+    font-family: 'Press Start 2P', serif;
+    font-size: 1em; /* reduced from 2em */
+    padding: 0.5em 1em; /* reduced from 1em 2em */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#answer:hover, #back-button:hover {
+    background-color: #45a049;
+}
+
+.answer-text {
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', serif; /* aesthetic font */
+    font-size: 24px; /* larger text */
 }

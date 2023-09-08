@@ -26,7 +26,7 @@ class GameFileCSVReader:
                     answer = row["Answer"]
                     
                     self.__dataset_of_questions.add(q)
-                    self.__dataset_of_answers.add(Answer(answer))
+                    self.__dataset_of_answers.add(Answer(category,answer,value))
 
                 except ValueError as e:
                     print(f"Skipping row due to invalid data: {e}")
