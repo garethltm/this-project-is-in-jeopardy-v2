@@ -1,10 +1,10 @@
 Category,Question,Image,Answer,Value
 c1,What is the name of this Animal,../static/images/among-us.gif,amogus sussy sus,100
-c1,A Category 1 Question with value of 200,https://i.imgur.com/4Z1Er8C.jpg,200answerc1,200
-c1,A Category 1 Question with value of 300,https://i.imgur.com/4Z1Er8C.jpg,300answerc1,300
-c1,A Category 1 Question with value of 400,https://i.imgur.com/4Z1Er8C.jpg,400answerc1,400
-c1,A Category 1 Question with value of 500,https://i.imgur.com/4Z1Er8C.jpg,500answerc1,500
-c2,A Category 2 Question with value of 100,https://i.imgur.com/4Z1Er8C.jpg,100answerc2,100
+c1,A Category 1 Question with value of 200,an image,200answerc1,200
+c1,A Category 1 Question with value of 300,,300answerc1,300
+c1,A Category 1 Question with value of 400,,400answerc1,400
+c1,A Category 1 Question with value of 500,,500answerc1,500
+c2,A Category 2 Question with value of 100,,100answerc2,100
 c2,A Category 2 Question with value of 200,,200answerc2,200
 c2,A Category 2 Question with value of 300,,300answerc2,300
 c2,A Category 2 Question with value of 400,,400answerc2,400
