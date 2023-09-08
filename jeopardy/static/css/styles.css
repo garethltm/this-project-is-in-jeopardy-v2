@@ -30,8 +30,8 @@ h1 {
     width:auto;
     font-size: 72px;
     margin-top: auto;
-    color: rgb(255, 0, 0);
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; /* increased offsets from 1px to 2px */
+    color: rgba(1, 34, 101, 255);
+    /* text-shadow: -10px 0 white, 0 2px black, -10px 0 white, 0 -2px black;  */
 }
 
 table {
@@ -47,6 +47,7 @@ th, td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 th {
     background-color: blue;
     color: rgb(220, 220, 31);
@@ -76,17 +77,16 @@ table tr:nth-child(even) td {
     background-color: lightgreen;
 }
 
-table td.clicked {
-    background-color: black !important;
-    color: white !important;
+@keyframes hover-animation {
+    0% {background-color: white; color: black;}
+    50% {background-color: red; color: white;}
+    100% {background-color: white; color: black;}
 }
 
-#answer:hover, #back-button:hover {
-    background-color: #45a049;
-}
-
-.answer-text {
-    text-align: center;
+table td:hover {
+    animation-name: hover-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 
 .center-content {

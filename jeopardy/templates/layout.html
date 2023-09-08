@@ -63,58 +63,62 @@
 
     </html>
 
-<!-- Add your JavaScript code here -->
 <script type='text/javascript'>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get the clickedQuestions object from local storage
-        var clickedQuestions = JSON.parse(localStorage.getItem('clickedQuestions')) || {};
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickedQuestions object from local storage
+    var clickedQuestions = JSON.parse(localStorage.getItem('clickedQuestions')) || {};
+    console.log(clickedQuestions);
+
+    // Add event listeners to the question elements
+    var questions = document.querySelectorAll('[class$="question"]');
+    for (var i = 0; i < questions.length; i++) {
+        // Check if the question has already been clicked
+        var questionId = questions[i].getAttribute('data-value') + '-' + questions[i].className;
+        console.log(questionId);
         console.log(clickedQuestions);
-
-        // Add event listeners to the question elements
-        var questions = document.querySelectorAll('[class$="question"]');
-        for (var i = 0; i < questions.length; i++) {
-            // Check if the question has already been clicked
-            var questionId = questions[i].getAttribute('data-value') + '-' + questions[i].className;
-            console.log(questionId);
-            console.log(clickedQuestions);
-            if (questionId in clickedQuestions) {
-                // Change the background color of the question element
-                console.log(questions[i]);
-                questions[i].style.backgroundColor = 'black';
-                // Change the text color to white for visibility
+        if (questionId in clickedQuestions) {
+            // Change the background color of the question element
+            if (Math.floor(i / 5) % 2 == 0) {
+                questions[i].style.backgroundColor = 'red';
                 questions[i].style.color = 'white';
+            } else {
+                questions[i].style.backgroundColor = 'white';
+                questions[i].style.color = 'black';
             }
-
-            // Add a click event listener to the question
-            questions[i].addEventListener('click', function() {
-                // Check if the question has already been clicked
-                if (this.classList.contains('clicked')) {
-                    return;
-                }
-
-                // Mark the question as clicked
-                this.classList.add('clicked');
-
-                // Save the clicked state of the question in local storage
-                var value = this.getAttribute('data-value');
-                var category = this.className.match(/c\d+/)[0];
-                var questionId = value + '-' + category+ 'question';
-                clickedQuestions[questionId] = true;
-                localStorage.setItem('clickedQuestions', JSON.stringify(clickedQuestions));
-
-                // Redirect the user to the question page
-                window.location.href = '/question?value=' + value + '&category=' + category;
-            });
+            // Disable clicking on the question element
+            questions[i].style.pointerEvents = 'none';
         }
 
-        // Add an event listener to the reset button
-        var resetButton = document.getElementById('reset-button');
-        resetButton.addEventListener('click', function() {
-            // Clear the clickedQuestions object from local storage
-            localStorage.removeItem('clickedQuestions');
+        // Add a click event listener to the question
+        questions[i].addEventListener('click', function() {
+            // Check if the question has already been clicked
+            if (this.classList.contains('clicked')) {
+                return;
+            }
 
-            // Reload the page to reset the styles
-            location.reload();
+            // Mark the question as clicked
+            this.classList.add('clicked');
+
+            // Save the clicked state of the question in local storage
+            var value = this.getAttribute('data-value');
+            var category = this.className.match(/c\d+/)[0];
+            var questionId = value + '-' + category+ 'question';
+            clickedQuestions[questionId] = true;
+            localStorage.setItem('clickedQuestions', JSON.stringify(clickedQuestions));
+
+            // Redirect the user to the question page
+            window.location.href = '/question?value=' + value + '&category=' + category;
         });
+    }
+
+    // Add an event listener to the reset button
+    var resetButton = document.getElementById('reset-button');
+    resetButton.addEventListener('click', function() {
+        // Clear the clickedQuestions object from local storage
+        localStorage.removeItem('clickedQuestions');
+
+        // Reload the page to reset the styles
+        location.reload();
     });
+});
 </script>
