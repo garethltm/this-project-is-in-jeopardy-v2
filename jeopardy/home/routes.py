@@ -10,10 +10,7 @@ home = Blueprint('home', __name__, static_folder='static', template_folder='temp
 
 @home.route('/', methods=['GET'])
 def home_home():
-    scoreboard = services.getScoreboard(repo.repo_instance)
-
     return render_template('layout.html',
-                           scoreboard = scoreboard,
                            )
 
 @home.route('/question', methods=['GET'])
@@ -40,3 +37,16 @@ def answer():
     return render_template('answer.html',
                            answer=answer.answer
                            )
+    
+@home.route('/daily_double', methods=['GET'])
+def daily_double():
+    category = request.args.get('category')
+    value = request.args.get('value')
+    
+    # Retrieve the question data from the repository
+    question = services.getQuestion(category, value, repo.repo_instance)
+
+    return render_template('daily_double.html',
+                           question=question.question,
+                           image=question.image,
+                           value=question.value)

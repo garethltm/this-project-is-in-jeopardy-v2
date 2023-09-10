@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class = "next-button">
-            <button id="back-button">Back to Board</button>
+            <button id="back">Back to Board</button>
         </div>
     </body>
 </html>
@@ -30,11 +30,8 @@
     var value = urlParams.get('value');
     var category = urlParams.get('category');
 
-    // Display the answer text
-    var answerText = document.getElementById('answer-text');    
-
     // Add an event listener to the back button
-    var backButton = document.getElementById('back-button');
+    var backButton = document.getElementById('back');
     backButton.addEventListener('click', function() {
         window.location.href = '/';
     });

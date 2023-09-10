@@ -63,62 +63,99 @@
 
     </html>
 
-<script type='text/javascript'>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the clickedQuestions object from local storage
-    var clickedQuestions = JSON.parse(localStorage.getItem('clickedQuestions')) || {};
-    console.log(clickedQuestions);
+    <script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the clickedQuestions object from local storage
+            var clickedQuestions = JSON.parse(localStorage.getItem('clickedQuestions')) || {};
 
-    // Add event listeners to the question elements
-    var questions = document.querySelectorAll('[class$="question"]');
-    for (var i = 0; i < questions.length; i++) {
-        // Check if the question has already been clicked
-        var questionId = questions[i].getAttribute('data-value') + '-' + questions[i].className;
-        console.log(questionId);
-        console.log(clickedQuestions);
-        if (questionId in clickedQuestions) {
-            // Change the background color of the question element
-            if (Math.floor(i / 5) % 2 == 0) {
-                questions[i].style.backgroundColor = 'red';
-                questions[i].style.color = 'red';
-            } else {
-                questions[i].style.backgroundColor = 'white';
-                questions[i].style.color = 'white';
+            // Get the dailyDouble object from local storage
+            var dailyDouble = JSON.parse(localStorage.getItem('dailyDouble'));
+
+            // Add event listeners to the question elements
+            var questions = document.querySelectorAll('[class$="question"]');
+
+        // Check if a Daily Double has already been selected
+        if (!dailyDouble) {
+            // Randomly select a cell to be the Daily Double
+            dailyDouble = questions[Math.floor(Math.random() * questions.length)];
+            // Save the dailyDouble object in local storage
+            localStorage.setItem('dailyDouble', JSON.stringify({
+                value: dailyDouble.getAttribute('data-value'),
+                category: dailyDouble.className.match(/c\d+/)[0]+'question'
+            }));
+        } else {
+            // Print out the value and category retrieved from local storage
+            console.log('Value from local storage:', dailyDouble.value);
+            console.log('Category from local storage:', dailyDouble.category);
+            // Find the existing Daily Double element
+            dailyDouble = document.querySelector('.' + dailyDouble.category + '[data-value="' + dailyDouble.value + '"]');
+
+            // Print out the result of the querySelector method
+            console.log('Result of querySelector:', dailyDouble);
+        }
+;
+            for (var i = 0; i < questions.length; i++) {
+                // Check if the question has already been clicked
+                var questionId = questions[i].getAttribute('data-value') + '-' + questions[i].className;
+                if (questionId in clickedQuestions) {
+                    // Change the background color of the question element
+                    if (Math.floor(i / 5) % 2 == 0) {
+                        questions[i].style.backgroundColor = 'red';
+                        questions[i].style.color = 'red';
+                    } else {
+                        questions[i].style.backgroundColor = 'white';
+                        questions[i].style.color = 'white';
+                    }
+                    // Disable clicking on the question element
+                    questions[i].style.pointerEvents = 'none';
+                }
+
+                // Add a click event listener to the question
+                questions[i].addEventListener('click', function() {
+                    // Check if the question has already been clicked
+                    if (this.classList.contains('clicked')) {
+                        return;
+                    }
+
+                    // Mark the question as clicked
+                    this.classList.add('clicked');
+
+                    // Save the clicked state of the question in local storage
+                    var value = this.getAttribute('data-value');
+                    var category = this.className.match(/c\d+/)[0];
+                    var questionId = value + '-' + category + 'question';
+                    clickedQuestions[questionId] = true;
+                    localStorage.setItem('clickedQuestions', JSON.stringify(clickedQuestions));
+
+                    // Check if the clicked question is the Daily Double
+                    if (this.classList.contains('daily-double')) {
+                        // Redirect the user to the daily double page instead of the question page
+                        window.location.href = '/daily_double?value=' + value + '&category=' + category;
+                    } else {
+                        // Redirect the user to the question page
+                        window.location.href = '/question?value=' + value + '&category=' + category;
+                    }                
+                });
             }
-            // Disable clicking on the question element
-            questions[i].style.pointerEvents = 'none';
+
+        // Add a 'daily-double' class to the selected cell
+        if (dailyDouble) {
+            dailyDouble.classList.add('daily-double');
+        } else {
+            console.error('No element found for Daily Double');
         }
 
-        // Add a click event listener to the question
-        questions[i].addEventListener('click', function() {
-            // Check if the question has already been clicked
-            if (this.classList.contains('clicked')) {
-                return;
-            }
+            // Add an event listener to the reset button
+            var resetButton = document.getElementById('reset-button');
+            resetButton.addEventListener('click', function() {
+                // Clear the clickedQuestions object from local storage
+                localStorage.removeItem('clickedQuestions');
 
-            // Mark the question as clicked
-            this.classList.add('clicked');
+                // Clear the dailyDouble object from local storage
+                localStorage.removeItem('dailyDouble');
 
-            // Save the clicked state of the question in local storage
-            var value = this.getAttribute('data-value');
-            var category = this.className.match(/c\d+/)[0];
-            var questionId = value + '-' + category+ 'question';
-            clickedQuestions[questionId] = true;
-            localStorage.setItem('clickedQuestions', JSON.stringify(clickedQuestions));
-
-            // Redirect the user to the question page
-            window.location.href = '/question?value=' + value + '&category=' + category;
+                // Reload the page to reset the styles
+                location.reload();
+            });
         });
-    }
-
-    // Add an event listener to the reset button
-    var resetButton = document.getElementById('reset-button');
-    resetButton.addEventListener('click', function() {
-        // Clear the clickedQuestions object from local storage
-        localStorage.removeItem('clickedQuestions');
-
-        // Reload the page to reset the styles
-        location.reload();
-    });
-});
-</script>
+        </script>

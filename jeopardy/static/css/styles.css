@@ -98,7 +98,33 @@ table td:hover {
     font-size: 70px; /* larger text */
 }
 
-#answer, #back-button {
+.daily-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', serif; /* aesthetic font */
+    font-size: 120px; /* larger text */
+    margin-top: 150px;
+}
+
+.daily-content p {
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {color: red;}
+    14% {color: orange;}
+    28% {color: yellow;}
+    42% {color: lime;}
+    57% {color: blue;}
+    71% {color: indigo;}
+    85% {color: violet;}
+    100% {color: red;}
+}
+
+#answer, #back, #reveal {
     margin-top: 20px;
     font-family: 'Press Start 2P', serif;
     font-size: 1em; /* reduced from 2em */
@@ -111,7 +137,7 @@ table td:hover {
     transition: background-color 0.3s ease;
 }
 
-.next-button {
+.next-button, .reveal-button {
     display: flex;
     justify-content: center;
 }

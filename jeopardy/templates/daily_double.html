@@ -3,22 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UMSA Jeopardy Game - Question</title>
+        <title>UMSA Jeopardy Game - Daily Double</title>
         <link rel="stylesheet" href="../static/css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <audio id="sound-effect" src="../static/audio/dailydouble.mp3"></audio>
     </head>
     <body>
-        <h1>Question:</h1>
-        <div class="center-content">
-            <div class = "question-text" id="question-text">
-                <p>{{question}}</p>
-                <p><img src="{{image}}">
-                </p>
-            </div>
+        <div class="daily-content">
+            <p>DAILY DOUBLE</p>
         </div>
-        <div class = "next-button">
-            <button id="answer">Reveal Answer</button>
+        <div class = "reveal-button">
+            <button id="reveal">Reveal Question</button>
         </div>
     </body>
 </html>
@@ -31,8 +27,16 @@
     var category = urlParams.get('category');
     
     // Add an event listener to the answer button
-    var answerButton = document.getElementById('answer');
-    answerButton.addEventListener('click', function() {
-        window.location.href = '/answer?value=' + value + '&category=' + category;
+    var revealButton = document.getElementById('reveal');
+    revealButton.addEventListener('click', function() {
+        window.location.href = '/question?value=' + value + '&category=' + category;
     });
+
+    window.addEventListener('load', function() {
+    // Get the audio element
+    var soundEffect = document.getElementById('sound-effect');
+
+    // Play the sound effect
+    soundEffect.play();
+});
 </script>
