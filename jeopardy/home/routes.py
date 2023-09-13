@@ -40,8 +40,8 @@ def answer():
     
 @home.route('/daily_double', methods=['GET'])
 def daily_double():
-    category = request.args.get('category')
     value = request.args.get('value')
+    category = request.args.get('category')
     
     # Retrieve the question data from the repository
     question = services.getQuestion(category, value, repo.repo_instance)
@@ -49,4 +49,15 @@ def daily_double():
     return render_template('daily_double.html',
                            question=question.question,
                            image=question.image,
+                           value=question.value)
+
+@home.route('/column_filled', methods=['GET'])
+def column_filled():
+    category = request.args.get('category')
+    value = request.args.get('value')
+    # Retrieve the question data from the repository
+    question = services.getQuestion(category, value, repo.repo_instance)
+    
+    return render_template('challenge.html',
+                           question=question.question,
                            value=question.value)
