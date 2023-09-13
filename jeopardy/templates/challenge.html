@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UMSA Jeopardy Game - Challenge</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="challenge-content">
+            <p>CHALLENGE TIME</p>
+        </div>
+        <div class = "reveal-button">
+            <button id="reveal">Reveal Challenge</button>
+        </div>
+    </body>
+</html>
+
+<!-- Add your JavaScript code here -->
+<script type='text/javascript'>
+    // Get the value and category from the URL query parameters
+    var urlParams = new URLSearchParams(window.location.search);
+    var value = urlParams.get('value');
+    var category = urlParams.get('category');
+    
+    // Add an event listener to the answer button
+    var revealButton = document.getElementById('reveal');
+    revealButton.addEventListener('click', function() {
+        window.location.href = '/question?value=' + value + '&category=' + category;
+    });
+</script>

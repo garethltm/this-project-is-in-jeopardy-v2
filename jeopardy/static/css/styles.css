@@ -109,6 +109,17 @@ table td:hover {
     margin-top: 150px;
 }
 
+.challenge-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', serif; /* aesthetic font */
+    font-size: 120px; /* larger text */
+    margin-top: 150px;
+}
+
 .daily-content p {
     animation: rainbow 5s linear infinite;
 }
