@@ -114,6 +114,7 @@
                         window.location.href = '/question?value=' + value + '&category=' + category;
                     }              
                 });
+                
                     var categoryCounts = localStorage.getItem('categoryCounts');
                     if (categoryCounts) {
                         categoryCounts = JSON.parse(categoryCounts);
@@ -129,15 +130,20 @@
 
                     for (var questionId in clickedQuestions) {
                         var category = questionId.split('-')[1];
-
+                        console.log(categoryCounts[category])
                         categoryCounts[category]++;
+                        if (categoryCounts[category] == 5) {
+                            console.log('All questions in the ' + category + ' column have been clicked');
+                            validity = true;
+                        }
                     }
 
                     var redirect = false;
                     var redirectCategory;
+                    
 
                     for (var category in categoryCounts) {
-                        if (categoryCounts[category] == 5) {
+                        if (categoryCounts[category] == 5 && validity == true) {
                             console.log('All questions in the ' + category + ' column have been clicked');
                             redirect = true;
                             redirectCategory = category.replace('question', ''); // This will remove 'question' from the category
@@ -150,13 +156,18 @@
                             };
                             localStorage.setItem('categoryCounts', JSON.stringify(categoryCounts)); // Update local storage
                             break; // This will exit the loop as soon as a category with 5 clicked questions is found
+                            validity = false;
                         }
                     }
 
                     if (redirect) {
-                    categoryCounts[redirectCategory + 'question'] = 0;
-                    localStorage.setItem('categoryCounts', JSON.stringify(categoryCounts));
-                    window.location.replace('/column_filled?value=1000' + '&category=' + redirectCategory);
+                        console.log('Redirecting to ' + category + ' column')
+                        console.log(categoryCounts)
+                        categoryCounts[category] = 0;
+                        console.log(clickedQuestions)
+                        localStorage.setItem('categoryCounts', JSON.stringify(categoryCounts));
+                        validity = true;
+                        // window.location.replace('/column_filled?value=1000' + '&category=' + redirectCategory);
                 }
 }
 
