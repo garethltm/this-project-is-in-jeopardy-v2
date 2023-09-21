@@ -1,27 +1,56 @@
 Category,Question,Image,Answer,Value
-c1,What is another name for NZ?,,Land of the long white cloud,100
-c1,Which state is this church located in?,,Malacca,200
+c1,What city in Malaysia is the nearest to Singapore?,,Johor Bahru,100
+c1,Which state is this church located in?,../static/images/200c1.png,Malacca ,200
 c1,Which Federal territory does this flag belong to?,../static/images/300c1.png,Kuala Lumpur,300
-c1,How many islands does Malaysia have?,,878,400
+c1,How many islands does Malaysia have? ,,878,400
 c1,Which state does this Coat of Arms belong to?,../static/images/500c1.png,Johor,500
 c2,What is the name of this actor?,../static/images/100c2.jpg,Henry Golding,100
-c2,How many Cicakman movies are there?,,Three,200
+c2,Which movie earned Malaysian actress Michelle Yeoh an Oscar for Best Actress?,,Everything Everywhere All at Once,200
 c2,What is the name of this character?,../static/images/300c2.webp,Upin,300
 c2,From which Malaysian cartoon is this character from?,../static/images/400c2.webp,BoBoiBoy,400
-c2,Which movie earned Malaysian actress Michelle Yeoh an Oscar for Best Actress?,,Everything Everywhere All at Once,500
-c3,Identify the Malaysian food.,../static/images/100c3.webp,Char Kway Teow,100
+c2,How many Cicakman movies are there?,../static/images/500c2.webp,Three,500
+c3,Identify the Malaysian food. , ../static/images/100c3.webp ,Char Kway Teow,100
 c3,"In the dish Nasi Lemak, the rice is typically served with chicken, eggs, cucumber, nuts, ikan bilis and what?",,Sambal,200
-c3,Act out this meal for your teammates to guess.,../static/images/300c3.jpg,Chicken Rice,300
+c3,Act out this meal for your teammates to guess. ,,Chicken Rice,300
 c3,What famous Malaysian food has a dialect in its name?,,Hokkien Mee,400
-c3,What's the signature dish from this state?,../static/images/500c3.png,Asam Laksa,500
+c3,What’s the signature dish from this state? ,../static/images/500c3.png,Asam Laksa,500
 c4,What is the NZ bird on the one dollar coin?,,Kiwi bird,100
-c4,Which of these birds are native to New zealand? Takahe? Takaher? Takathey? Takathem?,,definitely not takahe,200
-c4,"Which one of these new zealand mountains are volcanoes?, Mt Ngauruhoe, and Mt tongariro? Or Mt Ruapenice?",,Mt Tongariro,300
-c4,Every member of your team name a different meat pie sold in a typical nz baker,,"Answers could be the following: mince, mine and cheese, steak, steak and cheese, chicken and vegetable, chicken and cranberry, butter chicken, steak and mushroom",400
-c4,Perform the haka with your whole team,,"Successful completion for 500pts, EXTRA POINTS AVAILABLE",500
+c4,The Moa is an extinct flightless bird formerly endemic to New Zealand. What was the cause of its extinction? Did the Maoris eat it? Did it starve? Did it die or old age?,,The Maoris ate it,200
+c4,One person from the team must come up and receive their mystery bird,,the person will have to act quietly for the rest of the team to guess.,300
+c4,PHYSICAL ACTIVITY!!,,Do the human table as a team and hold for 20 seconds,400
+c4,Maori Whisper,,tamaki makaurau or something,500
 c5,Who is the president of UMSA?,,Nathan Tieu,100
-c5,"Select one person in your group to do push-ups,",../static/images/200c5.webp,20 pushups for 200 pts,200
-c5,This cephalopod has 3 hearts,../static/images/300c5.jpg,What is an octopus,300
-c5,"In order of team members, count from 1 to (number of group members) in any language that is not English with each member saying one number each (no preparation/helping and everyone must count in the same language)",../static/images/400c5.jpg,Successful completion for 400pts,400
-c5,Your runner must list the seven deadly sins,../static/images/500c5.webp,"Pride, Greed, Lust, Envy, Gluttony, Wrath, Sloth",500
-c1,this is a challenge,,challenge,1000
+c5,Select one person in your group to do push-ups,../static/images/200c5.webp,20 pushups for 200 pts,200
+c5,Unscramble this character from the Harry Potter series: MY ALOOF CARD,,Draco Malfroy,300
+c5,"In order of team members, count from 1 to (number of group members) in any language that is not English with each member saying one number each (no preparation/helping and everyone must count in the same language)                                               ",https://polyglotclub.com/wiki/images/8/8b/Count_to_10_in_all_languages_PolyglotClub_Wiki_Lesson.jpg,Successful completion for 400pts,400
+c5,Subtract a letter from the name of a key found on a keyboard and you get this explicative ,,Shift (sh*t),500
+challenge,,,,
+,"Go back to your team and without speaking, get everyone to jump at the same time. need to record",,,
+,,,,
+,,,,
+,,,,
+,,,,
+,"c1 = Location, c2 = Movies, c3 = Food, c4 = New Zealand, c5 = Misc",,,
+,,,,
+,New 5 Challenges below vvv,Gareth comments below vv,,
+,Human Pyramid,,,
+,"Show a bunch of pictures (e.g. malaysian flags, snacks etc): all teams answer on piece of paper whichever team gets most right --> gets all the points ",,,
+,"Ask the team to line up in order of birthdays (or age, or alphabetical order of your degree) etc. - Fastest team gets the points",,,
+,"Pictionary -> can use the room's whiteboard marker to draw, get the losing team to nominate a player, losing team gets one guess and if they don't get it then we buzzer it for other teams",,,
+,Play iconic NZ or malaysian songs: each team write down the answer on a piece of paper whoever gets the most right gets the points ,,,
+,Telephone game /chinese whisper (word is an malaysian slang): whichever team gets it the most correct gets the points ,,,
+,"Tiktok dance - griddy, dabbing, IMSUPER SHY SUPER SHY",i like - something cringe,,
+,Play simon says,,,
+,"Take a 0.5x photo of one of your teammates, the team that has the most creative pic, wins!",this one maybe like see who can do the most creative one?,,
+,picture quiz thing - picture: ,,,
+,"First team to bring a random stranger from outside the room into the lecture hall, wins",,,
+,,Points allocation? Maybe for challenges we can give 200? what do you think,,
+,,"for the questions ya, jz dm for whatever picture you want to display on the screen ya",,
+,,"this one can be inside the questions up there
+depends on how much points you may think that it is worth",,
+,Teams have to pick one recently released movie (from this year) and mimic it out to the other teams. The team that guess correctly the most wins.,,,
+,"JC will play five seconds of one song (any song, let the MC's choose), the first team to guess it wins.",who in paris,,
+,Team that has the best pickup line wins (MCs choose). One team = one pickup line,,,
+,First team to create the human table -> table (depeds on numbers could work with 3 and above),,,
+,"Stand on one leg (nominate one member per team), the long standing = wins",,,
+,Teams have to go outside the lecture hall and find one stranger to take a selfie with (show the pic to MCs as proof),,,
