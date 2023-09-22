@@ -1,6 +1,8 @@
 ## Description
 
-This repository contains the jeopardy game
+This repository contains the jeopardy game that is using a simple Flask framework implementation that I have learnt from my COMPSCI235 class. 
+
+This project is a simple project purely for the UMSA Jeopardy Game Night of 2023
 
 ## Installation
 
